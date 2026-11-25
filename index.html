@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GoalTimer</title><link rel="stylesheet" href="style.css"></head><body><div id="bgfx"></div>
+<header class="top"><b class="logo">◔ GoalTimer</b>
+<input id="search" type="search" placeholder="Search timers (F)" aria-label="Search timers">
+<button class="ghost" id="theme" title="Toggle theme (T)">Theme</button>
+<button class="ghost" id="settingsBtn" title="Settings">Settings</button>
+<button class="primary" id="newBtn" title="New timer (N)">+ New timer</button></header>
+<main>
+<section class="stats" id="stats"></section>
+<nav class="bar"><div id="tabs"></div>
+<select id="cat" aria-label="Category"></select>
+<select id="sort" aria-label="Sort"><option value="near">Nearest event</option><option value="new">Recently created</option><option value="az">A–Z</option></select></nav>
+<section id="grid" class="grid"></section></main>
+
+<dialog id="formDlg"><form id="form" method="dialog"><h2 id="formTitle">New timer</h2>
+<label>Title<input name="title" required maxlength="80"></label>
+<label>Description<input name="desc" maxlength="200"></label>
+<div class="row"><label>Date<input type="date" name="date" required></label><label>Time<input type="time" name="time" value="09:00" required></label></div>
+<div class="chips" id="presets"></div>
+<div class="row"><label>Category<select name="category"></select></label><label>Emoji<input name="icon" value="🎯" maxlength="4"></label><label>Color<input type="color" name="color" value="#6366f1"></label></div>
+<p class="err" id="err"></p>
+<div class="row end"><button type="button" class="ghost" id="cancel">Cancel</button><button class="primary" id="save">Create timer</button></div></form></dialog>
+
+<dialog id="setDlg"><h2>Settings</h2><div id="look"></div>
+<label>Theme<select id="setTheme"><option>system</option><option>light</option><option>dark</option></select></label>
+<div class="row"><button class="ghost" id="export">Export JSON</button><button class="ghost" id="import">Import JSON</button><button class="danger" id="clear">Clear all</button></div>
+<input type="file" id="file" accept=".json" hidden><div class="row end"><button class="primary" id="closeSet">Done</button></div></dialog>
+
+<dialog id="confirmDlg"><p id="confirmMsg"></p><div class="row end"><button class="ghost" id="confirmNo">Cancel</button><button class="danger" id="confirmYes">Confirm</button></div></dialog>
+
+<div id="focus" hidden><div class="fbar"><button class="ghost" id="fsBtn">Fullscreen</button><button class="ghost" id="fTheme">Theme</button><button class="ghost" id="fClose">Close</button></div><div id="fBody"></div></div>
+<div id="toasts" aria-live="polite"></div>
+<script src="utils.js"></script><script src="storage.js"></script><script src="timer.js"></script><script src="theme.js"></script><script src="ui.js"></script><script src="app.js"></script></body></html>
