@@ -9,3 +9,6 @@ Fallback: resize the pop-up and use your OS's "always on top" option, or use Foc
 
 ## Not yet built
 Per-timer layout/font/card customization, reminders/Notification API, timezone field, default-layout settings.
+
+## Explore online
+https://h25-goaltimer.netlify.app/
